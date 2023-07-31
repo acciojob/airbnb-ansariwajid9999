@@ -80,7 +80,7 @@ public class Repository {
         Hotel hotel = hotelDB.get(hotelName);
         List<Facility> availableFacilities = hotel.getFacilities();
         for(Facility f : newFacilities){
-            if(containsAlready(availableFacilities, f) == false)
+            if(!containsAlready(availableFacilities, f))
                 availableFacilities.add(f);
         }
         hotel.setFacilities(availableFacilities);
